@@ -25,3 +25,17 @@
 ### The CO microcode instruction tells the program counter to, during the clock cycle when it is performed, set the data in the lower 5 bits of the central bus to the value within itself
 ### The CE microcode instruction tells the program counter to, upon the clock cycle during which it is performed, increment its internal value (and halt the HARM8 if the value overflows from the increment)
 
+## Address Register
+### Stores 5 bits of data
+### Not shown in the mathematical description of the actions of each instruction
+### It is wired to constantly output to the address port of the RAM
+### The MAI microcode instruction tells the address register to, upon the clock cycle during which it is performed, read from the lower 5 bits of the central bus and store that data within itself
+
+## Instruction Register
+### Stores 8 bits of data
+### Not shown in the mathematical description of the actions of each instruction
+### It is wired to constantly output its *upper* five bits to the opcode input of the control logic
+### The IRI microcode instruction tells the instruction register to, upon the clock cycle during which it is performed, read from the data output of the RAM and store that data within itself
+### The IRO microcode instruction tells the instruction register to, during the clock cycle when it is performed, set the data in the lower 5 bits of the central bus to the lower five bits of the value within itself
+
+# This listing is not complete. More will be added soon.
