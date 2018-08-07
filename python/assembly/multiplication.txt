@@ -1,0 +1,19 @@
+$top = __line__
+$x = 28
+$y = 29
+$p = 30
+lda $x
+add 9
+jc $continue
+hlt
+$continue = __line__
+sta $x
+lda $p
+add $y
+sta $p
+jmp $top
+dat 255
+snip 18
+dat 3
+dat 5
+dat 0
