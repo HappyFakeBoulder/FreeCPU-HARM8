@@ -1,0 +1,10 @@
+out
+add 8
+jc 4
+jmp 0
+add 9
+out
+jz 0
+jmp 4
+dat 1
+dat 255
