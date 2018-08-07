@@ -154,7 +154,7 @@ class ConsoleIO():
 #main
 mainIO = ConsoleIO()
 mainVM = HARM8(mainIO, False)
-prgrmFile = open("prgrm.txt", "r")
+prgrmFile = open("binPrgrm.txt", "r")
 mainVM.loadPrgrm(prgrmFile.read().split("\n"))
 prgrmFile.close()
 mainVM.run(False, True)
