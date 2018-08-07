@@ -158,3 +158,4 @@ prgrmFile = open("binPrgrm.txt", "r")
 mainVM.loadPrgrm(prgrmFile.read().split("\n"))
 prgrmFile.close()
 mainVM.run(False, True)
+#
