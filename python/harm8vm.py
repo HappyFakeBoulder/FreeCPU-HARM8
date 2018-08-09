@@ -1,4 +1,4 @@
-import time
+import time, sys
 
 #NANDing binary strings
 def strNand(str1, str2):
@@ -98,7 +98,7 @@ class HARM8():
 		if type(program) != list:
 			raise TypeError("Program passed to loadPrgrm was not a list")
 		self.clear()
-		for x in range(0, 32 if len(program) > 32 else len(program)):
+		for x in range(0, (32 if len(program) > 32 else len(program))):
 			for y in program[x]:
 				if y not in list("01"):
 					raise ValueError("Program passed to loadPrgrm was non-binary")
@@ -152,10 +152,31 @@ class ConsoleIO():
 			raise TypeError("arg passed to fout was not a list")
 
 #main
+# check for correct number of arguments
+if (len(sys.argv) != 3) and (len(sys.argv) != 2):
+	print("To use this application, enter in the command line 'python3 harm8vm.py -args codeFileName.txt'\nReplace '-args' with whatever arguments you want (or don't include it for the defaults)\nReplace 'codeFileName.txt' with the name of the file containing the code you want to run\n'-s' makes the VM run slower, '-m' displays the contents of memory after each instruction,\nand '-e' displays the contents of memory once at the end")
+	raise TypeError
+# find which argument is the control booleans
+argInd = -1
+argIndSet = False
+for x in range(0, len(sys.argv)):
+	if sys.argv[x].startswith("-"):
+		if not argIndSet:
+			argInd = x
+			argIndSet = True
+		else:
+			print("You must only give one set of arguments, and give the filename")
+			raise TypeError
+fileInd = 1 if (not argIndSet) or (argInd == 2) else 2
+# if they were given
+if argIndSet:
+	cmdArgs = ["s" in sys.argv[argInd], "m" in sys.argv[argInd], "e" in sys.argv[argInd]]
+# if they weren't
+else:
+	cmdArgs = [False, False, False]
 mainIO = ConsoleIO()
-mainVM = HARM8(mainIO, False)
-prgrmFile = open("binPrgrm.txt", "r")
+mainVM = HARM8(mainIO, cmdArgs[0])
+prgrmFile = open(sys.argv[fileInd], "r")
 mainVM.loadPrgrm(prgrmFile.read().split("\n"))
 prgrmFile.close()
-mainVM.run(False, True)
-#
+mainVM.run(cmdArgs[1], cmdArgs[2])
