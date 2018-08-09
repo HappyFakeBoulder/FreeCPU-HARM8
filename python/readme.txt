@@ -4,5 +4,5 @@ put in bash 'python3 harm8vm.py -args bin.txt', where bin.txt is the binary file
 to control the execution of the program. -s makes the VM run more slowly, -m displays the contents of memory after each instruction
 execution, and -e displays the contents of memory once at the end of the program. -sm makes the VM run more slowly and display the
 contents of memory after each instruction execution, and -se makes the VM run more slowly and display the contents of memory once at the
-end of the program. -sme makes the VM run more slowly, displays the contents of memory after each instruction execution, and displays the
-contents of memory once at the end of the program.
+end of the program. -sme makes the VM run more slowly, displays the contents of memory after each instruction execution, and displays
+the contents of memory once at the end of the program.
