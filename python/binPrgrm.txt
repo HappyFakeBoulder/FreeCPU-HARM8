@@ -1,7 +1,0 @@
-#in this file
-#put the binary
-#for the program
-#you want to run
-#in the VM
-#and remember to
-#remove these comments
