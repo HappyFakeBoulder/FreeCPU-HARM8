@@ -38,4 +38,9 @@
 ### The IRI microcode instruction tells the instruction register to, upon the clock cycle during which it is performed, read from the data output of the RAM and store that data within itself
 ### The IRO microcode instruction tells the instruction register to, during the clock cycle when it is performed, set the data in the lower 5 bits of the central bus to the lower five bits of the value within itself
 
+## RAM
+### Stores 32 words of data
+### As each word is 8 bits, it stores 32 bytes
+### ... more stuff here
+
 # This listing is not complete. More will be added soon.
