@@ -49,7 +49,8 @@
 ### The MDO microcode instruction tells the RAM to, during the clock cycle when it is performed, set the data in the central bus to the value in the spot within itself that is currently addressed
 
 ## Input port
-### Transfers 8 bits of data
-### ... more stuff here
+### Transfers 8 bits of data, plus 1 bit of output to notify the user when input is wanted and 1 bit of input for the user to say when they are finished
+### Connected to the input wait circuit, so as to delay the clock until the user enables the extra input bit to signify finishing
+### The IO microcode instruction tells the input port to notify the user that input is desired, then use the input wait circuit to disable other function until user finishes input, and then set the data in the central bus to the data the user had input
 
 # This listing is not complete. More will be added soon.
