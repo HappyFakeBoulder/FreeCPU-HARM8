@@ -50,6 +50,7 @@
 
 ## Input port
 ### Transfers 8 bits of data, plus 1 bit of output to notify the user when input is wanted and 1 bit of input for the user to say when they are finished
+### Represented by "input" in the mathematical descriptions of the actions of each instruction
 ### Connected to the input wait circuit, so as to delay the clock until the user enables the extra input bit to signify finishing whenever input is required
 ### The IO microcode instruction tells the input port to notify the user that input is desired, then use the input wait circuit to disable other function until user finishes input, and then set the data in the central bus to the data the user had input
 
@@ -58,6 +59,20 @@
 ### Delays in this are created when the input port is told to get input with the IO microcode instruction
 
 ## Output register/port
+### Stores 8 bits of data
+### Represented by "output" in the mathematical descriptions of the actions of each instruction
+### Constantly outputs that data to the output port
+### The OI microcode instruction tells the output register to, upon the clock cycle during which it is performed, read from the central bus and store that data within itself
+
+## ALU
+### Processes on 8 bits of data, with two inputs and one output
+### The first input is connected to the accumulator; the second input is connected to the B register
+### Connected to the flag registers
+### Has two operations; only outputs the result of one of them at a time (default is addition, the other is bitwise NAND)
+### The ΣO (sum out) microcode instruction tells the ALU to, during the clock cycle during which it is performed, set the data in the central bus to the output from itself; it also sets the zero flag, and the carry flag if it is doing addition
+### The ALU microcode instruction tells the ALU to, during the clock cycle during which it is performed, switch its calculation mode to bitwise NAND instead of addition
+
+## Flag Registers
 ### ... more stuff here
 
 # This listing is not complete. More will be added soon.
