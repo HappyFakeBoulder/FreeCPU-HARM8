@@ -21,9 +21,11 @@
 ## Program Counter
 ### Stores 5 bits of data
 ### Represented by "PC" in the mathematical descriptions of the actions of each instruction
-### The CI microcode instruction tells the program counter to, upon the clock cycle during which it is performed, read from the lower 5 bits of the central bus and store that data within itself
+### The CIA microcode instruction tells the program counter to, upon the clock cycle during which it is performed, read from the lower 5 bits of the central bus and store that data within itself
 ### The CO microcode instruction tells the program counter to, during the clock cycle when it is performed, set the data in the lower 5 bits of the central bus to the value within itself
-### The CE microcode instruction tells the program counter to, upon the clock cycle during which it is performed, increment its internal value (and halt the HARM8 if the value overflows from the increment)
+### The CE microcode instruction tells the program counter to, upon the clock cycle during which it is performed, increment its internal value (and triggers the [HLT microcode instruction](https://github.com/HappyFakeBoulder/FreeCPU-HARM8/) if the value overflows from the increment)
+### The CIZ microcode instruction tells the program counter to, upon the clock cycle during which it is performed, read from the lower 5 bits of the central bus and store that data within itself, but only if the zero flag is set to 1
+### The CIC microcode instruction tells the program counter to, upon the clock cycle during which it is performed, read from the lower 5 bits of the central bus and store that data within itself, but only if the carry flag is set to 1
 
 ## Address Register
 ### Stores 5 bits of data
@@ -73,6 +75,21 @@
 ### The ALU microcode instruction tells the ALU to, during the clock cycle during which it is performed, switch its calculation mode to bitwise NAND instead of addition
 
 ## Flag Registers
-### ... more stuff here
+### Two 1-bit registers - zero flag and carry flag
+### Connected to the ALU, set during the ΣO microcode instruction
+### Zero flag is set if the ALU's output is equal to 00000000
+### Carry flag is set if the ALU's processing mode is addition and the addition resulted in a carry-out; it is only updated when the ALU's processing mode is addition
+### Flags are used in conditional jumps
+
+## Central Data Bus
+### 8 bits wide
+### Almost all other components are connected to it in some way, so as to transfer data between them
+
+## Reset system
+### pass
+
+## Halting system
+### The clock will be stopped until the reset signal is sent when this is activated
+### The HLT microcode instruction activates the halting system
 
 # This listing is not complete. More will be added soon.
