@@ -23,7 +23,7 @@
 ### Represented by "PC" in the mathematical descriptions of the actions of each instruction
 ### The CIA microcode instruction tells the program counter to, upon the clock cycle during which it is performed, read from the lower 5 bits of the central bus and store that data within itself
 ### The CO microcode instruction tells the program counter to, during the clock cycle when it is performed, set the data in the lower 5 bits of the central bus to the value within itself
-### The CE microcode instruction tells the program counter to, upon the clock cycle during which it is performed, increment its internal value (and triggers the [HLT microcode instruction](https://github.com/HappyFakeBoulder/FreeCPU-HARM8/) if the value overflows from the increment)
+### The CE microcode instruction tells the program counter to, upon the clock cycle during which it is performed, increment its internal value (and triggers the [HLT microcode instruction](https://github.com/HappyFakeBoulder/FreeCPU-HARM8/blob/master/general-documentation/cpu-components.md#the-hlt-microcode-instruction-activates-the-halting-system) if the value overflows from the increment)
 ### The CIZ microcode instruction tells the program counter to, upon the clock cycle during which it is performed, read from the lower 5 bits of the central bus and store that data within itself, but only if the zero flag is set to 1
 ### The CIC microcode instruction tells the program counter to, upon the clock cycle during which it is performed, read from the lower 5 bits of the central bus and store that data within itself, but only if the carry flag is set to 1
 
