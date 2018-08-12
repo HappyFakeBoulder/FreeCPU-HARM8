@@ -41,6 +41,15 @@
 ## RAM
 ### Stores 32 words of data
 ### As each word is 8 bits, it stores 32 bytes
+### Represented by "M" in the mathematical descriptions of the actions of each instruction
+### Has a 5-bit address input port, which is wired to constantly input from the value output on the address register
+### Has an 8-bit dual-directional data port
+### It is used to store both data and program
+### The MDI microcode instruction tells the RAM to, upon the clock cycle during which it is performed, read from the central bus and store that data within the spot within itself that is currently addressed
+### The MDO microcode instruction tells the RAM to, during the clock cycle when it is performed, set the data in the central bus to the value in the spot within itself that is currently addressed
+
+## Input port
+### Transfers 8 bits of data
 ### ... more stuff here
 
 # This listing is not complete. More will be added soon.
