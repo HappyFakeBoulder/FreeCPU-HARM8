@@ -96,4 +96,7 @@
 ### The clock will be stopped until the reset signal is sent when this is activated
 ### The HLT microcode instruction activates the halting system
 
+## Control logic
+### pass
+
 # This listing is not complete. More will be added soon.
