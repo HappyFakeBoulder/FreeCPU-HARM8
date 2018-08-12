@@ -1,0 +1,12 @@
+$x = 28
+$y = 29
+$s = 30
+lda $x
+add $y
+sta $s
+hlt
+snip 24
+dat 15
+dat 22
+dat 0
+#the three dat statements are x, y, result, respectively
