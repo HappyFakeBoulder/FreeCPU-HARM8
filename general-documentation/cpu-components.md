@@ -59,6 +59,7 @@
 ## Input wait circuit
 ### Connected to the clock, so as to stop the clock when it creates a delay until the delay is finished
 ### Delays in this are created when the input port is told to get input with the IO microcode instruction
+### No microcode instructions associated with this component
 
 ## Output register/port
 ### Stores 8 bits of data
@@ -80,13 +81,16 @@
 ### Zero flag is set if the ALU's output is equal to 00000000
 ### Carry flag is set if the ALU's processing mode is addition and the addition resulted in a carry-out; it is only updated when the ALU's processing mode is addition
 ### Flags are used in conditional jumps
+### No microcode instructions associated with this component
 
 ## Central Data Bus
 ### 8 bits wide
 ### Almost all other components are connected to it in some way, so as to transfer data between them
+### No microcode instructions (directly) associated with this component
 
 ## Reset system
-### pass
+### Sets all registers to all zeros when activated, and starts up the clock if it was not already
+### No microcode instructions associated with this component
 
 ## Halting system
 ### The clock will be stopped until the reset signal is sent when this is activated
