@@ -97,8 +97,11 @@
 ### The HLT microcode instruction activates the halting system
 
 ## Control logic
-### Primarily consists of a ROM, with 18-bit words and 5-bit addressing (32 words)
-### The upper five bits of the instruction register are connected to the ROM's address port
-### 
+### Primarily consists of a ROM, with 18-bit words and 8-bit addressing (256 words)
+### The upper five bits of the instruction register are connected to the lower 5 bits of the ROM's address port
+### 3-bit counter, limited to counting up to (not including) 5 (with wrap-around), is connected to an inverse of the clock
+### The data in the 3-bit counter is connected to the upper 3 bits of the ROM's address port
+### The ROM stores what microcode instructions to activate, based on the current step of the instruction and the opcode in the instruction register
+### There is almost definitely something else to say here. I have no idea what.
 
-# This listing is not complete. More will be added soon.
+# If there is anything I forgot to put in, tell me in Issues.
