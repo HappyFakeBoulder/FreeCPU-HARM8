@@ -17,3 +17,4 @@ snip 18
 dat 3
 dat 5
 dat 0
+#the three dat statements are x, y, result, respectively
